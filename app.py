@@ -72,4 +72,7 @@ def update(id):
 #         db.create_all()
 #         app.run(debug=True)
 if (__name__ == "__main__"):
-    app.run(host='0.0.0.0', port=4000, debug=True)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=2000)
+# if (__name__ == "__main__"):
+#     app.run(host='0.0.0.0', port=4000, debug=True)
