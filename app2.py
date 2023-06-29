@@ -68,8 +68,9 @@ def update(id):
         return render_template('update.html', task=task)
 
 
-# def create_app():
 if (__name__ == "__main__"):
-    serve(app, host='127.0.0.1', port=5000)
-# if (__name__ == "__main__"):
-#     app.run(host='0.0.0.0', port=4000, debug=True)
+    create_app = app
+    create_app.run()
+
+else:
+    gunicorn_app = app
