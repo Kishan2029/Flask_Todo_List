@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
+from waitress import serve
 
 app = Flask(__name__)
 app.app_context().push()
@@ -67,12 +68,8 @@ def update(id):
         return render_template('update.html', task=task)
 
 
-# if (__name__ == "__main__"):
-#     with app.app_context():
-#         db.create_all()
-#         app.run(debug=True)
+# def create_app():
 if (__name__ == "__main__"):
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=2000)
+    serve(app, host='127.0.0.1', port=5000)
 # if (__name__ == "__main__"):
 #     app.run(host='0.0.0.0', port=4000, debug=True)
