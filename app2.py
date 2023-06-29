@@ -1,7 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from waitress import serve
 
 app = Flask(__name__)
 app.app_context().push()
